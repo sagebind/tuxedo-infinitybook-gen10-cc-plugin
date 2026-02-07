@@ -1,0 +1,7 @@
+id = "tuxedo-infinitybook-gen10"
+type = "device"
+version = "0.1.0"
+description = "Tuxedo InfinityBook Gen10 laptop support."
+address = "/tmp/tuxedo-infinitybook-gen10.sock"
+executable = "tuxedo-infinitybook-gen10"
+privileged = true

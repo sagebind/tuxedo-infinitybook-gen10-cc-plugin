@@ -1,0 +1,136 @@
+{
+  "lockfile-version": 1,
+  "manifest": {
+    "version": 1,
+    "install": {
+      "protobuf": {
+        "pkg-path": "protobuf"
+      }
+    },
+    "hook": {},
+    "profile": {},
+    "options": {}
+  },
+  "packages": [
+    {
+      "attr_path": "protobuf",
+      "broken": false,
+      "derivation": "/nix/store/ln0pn4bqjcwxiwb4hp6sw61n8kj8nsn4-protobuf-32.1.drv",
+      "description": "Google's data interchange format",
+      "install_id": "protobuf",
+      "license": "BSD-3-Clause",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=00c21e4c93d963c50d4c0c89bfa84ed6e0694df2",
+      "name": "protobuf-32.1",
+      "pname": "protobuf",
+      "rev": "00c21e4c93d963c50d4c0c89bfa84ed6e0694df2",
+      "rev_count": 940249,
+      "rev_date": "2026-02-04T09:32:58Z",
+      "scrape_date": "2026-02-06T04:36:32.762850Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "32.1",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/krmyknvyfr9wi1ggwyrqqs0x3ssj91j9-protobuf-32.1"
+      },
+      "system": "aarch64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "protobuf",
+      "broken": false,
+      "derivation": "/nix/store/w4aymzfm9fbhi828panfcl7kwjh5mpl0-protobuf-32.1.drv",
+      "description": "Google's data interchange format",
+      "install_id": "protobuf",
+      "license": "BSD-3-Clause",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=00c21e4c93d963c50d4c0c89bfa84ed6e0694df2",
+      "name": "protobuf-32.1",
+      "pname": "protobuf",
+      "rev": "00c21e4c93d963c50d4c0c89bfa84ed6e0694df2",
+      "rev_count": 940249,
+      "rev_date": "2026-02-04T09:32:58Z",
+      "scrape_date": "2026-02-06T05:06:19.062316Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "32.1",
+      "outputs_to_install": [
+        "out",
+        "out"
+      ],
+      "outputs": {
+        "debug": "/nix/store/2yy796qdpm0sg68hs7l8lnq5g476b36z-protobuf-32.1-debug",
+        "out": "/nix/store/dwijmsqfisk5kj8kykw4cnfmz7086gv6-protobuf-32.1"
+      },
+      "system": "aarch64-linux",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "protobuf",
+      "broken": false,
+      "derivation": "/nix/store/dp3124l7k2bqvq0lqn5nrkdnhixbvrxj-protobuf-32.1.drv",
+      "description": "Google's data interchange format",
+      "install_id": "protobuf",
+      "license": "BSD-3-Clause",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=00c21e4c93d963c50d4c0c89bfa84ed6e0694df2",
+      "name": "protobuf-32.1",
+      "pname": "protobuf",
+      "rev": "00c21e4c93d963c50d4c0c89bfa84ed6e0694df2",
+      "rev_count": 940249,
+      "rev_date": "2026-02-04T09:32:58Z",
+      "scrape_date": "2026-02-06T05:34:11.258631Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "32.1",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/hks7kpdlgx8v4n75yfq3lla03myyfhf2-protobuf-32.1"
+      },
+      "system": "x86_64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "protobuf",
+      "broken": false,
+      "derivation": "/nix/store/fkrvxbn2jrgfxz2m4bgdg58kqq1aa7cf-protobuf-32.1.drv",
+      "description": "Google's data interchange format",
+      "install_id": "protobuf",
+      "license": "BSD-3-Clause",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=00c21e4c93d963c50d4c0c89bfa84ed6e0694df2",
+      "name": "protobuf-32.1",
+      "pname": "protobuf",
+      "rev": "00c21e4c93d963c50d4c0c89bfa84ed6e0694df2",
+      "rev_count": 940249,
+      "rev_date": "2026-02-04T09:32:58Z",
+      "scrape_date": "2026-02-06T06:06:46.757534Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "32.1",
+      "outputs_to_install": [
+        "out",
+        "out"
+      ],
+      "outputs": {
+        "debug": "/nix/store/66yxx9v7hm7aq2fl3zqjjl6s42kwdknd-protobuf-32.1-debug",
+        "out": "/nix/store/kiqarh0s4z2kcd7p3sq049kcc85syww8-protobuf-32.1"
+      },
+      "system": "x86_64-linux",
+      "group": "toplevel",
+      "priority": 5
+    }
+  ]
+}
