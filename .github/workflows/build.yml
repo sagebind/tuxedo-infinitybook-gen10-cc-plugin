@@ -10,7 +10,7 @@ jobs:
       - uses: actions/checkout@v6
 
       - name: Install Protobuf compiler
-        run: apt install -y protobuf-compiler
+        run: sudo apt install -y protobuf-compiler
 
       - name: Build
         run: make
