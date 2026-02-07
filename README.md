@@ -1,5 +1,7 @@
 # TUXEDO InfinityBook Gen10 plugin for CoolerControl
 
+[![Build](https://github.com/sagebind/tuxedo-infinitybook-gen10-cc-plugin/workflows/build/badge.svg)](https://github.com/sagebind/tuxedo-infinitybook-gen10-cc-plugin/actions)
+
 This is a device plugin for [CoolerControl](https://docs.coolercontrol.org) that implements support for controlling system fans on [TUXEDO](https://www.tuxedocomputers.com) InfinityBook Gen10 laptops. After installing this plugin, CoolerControl will be able to monitor the laptop fan speeds as well as apply custom fan curves.
 
 This plugin expects you to have the official TUXEDO kernel modules installed and loaded to work, as we use the same driver APIs that the official [TUXEDO Control Center (TCC)](https://github.com/tuxedocomputers/tuxedo-control-center) application uses. Our own daemon is provided written in Rust as an alternative to TCC's `tccd`, which is written in TypeScript.
