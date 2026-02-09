@@ -47,7 +47,7 @@ async fn main() -> Result<()> {
     setup_logging()?;
     info!("Starting {SERVICE_ID} v{VERSION}");
 
-    let service = TuxedoService::new()?;
+    let service = TuxedoService::new();
 
     // The default socket path for device services requires privileged access. Using the following
     // will work for both privileged and non-privileged services.

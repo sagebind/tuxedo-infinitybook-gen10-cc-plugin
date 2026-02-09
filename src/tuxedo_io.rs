@@ -38,7 +38,7 @@ impl TuxedoIo {
         }
     }
 
-    /// Get the minimum recommended fan speed for all fans as a percentage.
+    /// Get the minimum recommended fan speed for all fans.
     pub fn get_fan_min_speed(&self) -> Result<u8> {
         let mut value = 0;
 
@@ -46,7 +46,6 @@ impl TuxedoIo {
             ioctl::r_uw_fans_min_speed(self.0.as_raw_fd(), &mut value)?;
         }
 
-        // Ok((value as f32 / UW_MAX_FAN_SPEED as f32 * 100f32) as u8)
         Ok(value as u8)
     }
 
@@ -54,7 +53,7 @@ impl TuxedoIo {
         Ok(UW_MAX_FAN_SPEED)
     }
 
-    /// Get the current speed of a fan as a percentage value between 0 and 100.
+    /// Get the current speed of a fan.
     pub fn get_fan_speed(&self, fan: Fan) -> Result<u8> {
         let mut value = 0;
 
@@ -65,11 +64,10 @@ impl TuxedoIo {
             };
         }
 
-        // Ok((value as f32 / UW_MAX_FAN_SPEED as f32 * 100f32) as u8)
         Ok(value as u8)
     }
 
-    /// Set the desired speed of a fan as a percentage value between 0 and 100.
+    /// Set the desired speed of a fan.
     ///
     /// This function is blocking. The driver will not return until the desired
     /// speed is reached.
@@ -94,13 +92,5 @@ impl TuxedoIo {
         }
 
         Ok(())
-    }
-}
-
-impl Drop for TuxedoIo {
-    fn drop(&mut self) {
-        // Ensure that fan control is always relinquished to the firmware when we
-        // stop controlling it.
-        let _ = self.set_fans_auto();
     }
 }
