@@ -238,7 +238,7 @@ impl Drop for TuxedoService {
 
 fn get_device(tuxedo_io: &TuxedoIo) -> io::Result<Device> {
     let min_duty = tuxedo_io.get_fan_min_speed()?.into();
-    let max_duty = tuxedo_io.get_fan_max_speed()?.into();
+    let max_duty = 100;
 
     let mut channels = HashMap::new();
 

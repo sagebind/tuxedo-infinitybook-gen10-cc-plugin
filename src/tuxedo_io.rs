@@ -38,7 +38,7 @@ impl TuxedoIo {
         }
     }
 
-    /// Get the minimum recommended fan speed for all fans.
+    /// Get the minimum recommended fan speed for all fans, as a percentage.
     pub fn get_fan_min_speed(&self) -> Result<u8> {
         let mut value = 0;
 
@@ -46,14 +46,10 @@ impl TuxedoIo {
             ioctl::r_uw_fans_min_speed(self.0.as_raw_fd(), &mut value)?;
         }
 
-        Ok(value as u8)
+        Ok(speed_to_percentage(value))
     }
 
-    pub fn get_fan_max_speed(&self) -> Result<u8> {
-        Ok(UW_MAX_FAN_SPEED)
-    }
-
-    /// Get the current speed of a fan.
+    /// Get the current speed of a fan as a percentage.
     pub fn get_fan_speed(&self, fan: Fan) -> Result<u8> {
         let mut value = 0;
 
@@ -64,16 +60,15 @@ impl TuxedoIo {
             };
         }
 
-        Ok(value as u8)
+        Ok(speed_to_percentage(value))
     }
 
-    /// Set the desired speed of a fan.
+    /// Set the desired speed of a fan as a percentage.
     ///
     /// This function is blocking. The driver will not return until the desired
     /// speed is reached.
-    pub fn set_fan_speed(&self, fan: Fan, speed: u8) -> Result<()> {
-        // let value = (UW_MAX_FAN_SPEED as f32 * speed as f32 / 100f32) as i32;
-        let value = i32::from(speed);
+    pub fn set_fan_speed(&self, fan: Fan, percentage: u8) -> Result<()> {
+        let value = percentage_to_speed(percentage).into();
 
         unsafe {
             match fan {
@@ -93,4 +88,12 @@ impl TuxedoIo {
 
         Ok(())
     }
+}
+
+fn speed_to_percentage(speed: i32) -> u8 {
+    (speed as f32 / UW_MAX_FAN_SPEED as f32 * 100f32) as u8
+}
+
+fn percentage_to_speed(percentage: u8) -> u8 {
+    (UW_MAX_FAN_SPEED as f32 * percentage as f32 / 100f32) as u8
 }
