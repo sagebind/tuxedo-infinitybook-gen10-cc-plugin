@@ -1,0 +1,5 @@
+[tools]
+protobuf = "latest"
+
+[tasks.build]
+run = "cargo build --locked --release"
