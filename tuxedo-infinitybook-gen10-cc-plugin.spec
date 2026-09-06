@@ -15,7 +15,7 @@ BuildRequires:  cargo
 Plugin for CoolerControl for Tuxedo InfinityBook Gen10 laptops.
 
 %build
-cargo -C $RPM_SOURCE_DIR build
+cargo --manifest-path $RPM_SOURCE_DIR/Cargo.toml build
 
 %install
 install -Dpm 0755 target/rpm/tuxedo-infinitybook-gen10 -t %{buildroot}%{_bindir}
