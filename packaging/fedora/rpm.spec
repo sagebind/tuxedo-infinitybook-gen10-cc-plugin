@@ -1,7 +1,5 @@
-%define version %(awk -F'"' '/^version = / {print $2; exit;}' < Cargo.toml)
-
 Name:           tuxedo-infinitybook-gen10-cc-plugin
-Version:        %{version}
+Version:        __VERSION__
 Release:        0%{?dist}
 Summary:        Plugin for CoolerControl for Tuxedo InfinityBook Gen10 laptops
 
