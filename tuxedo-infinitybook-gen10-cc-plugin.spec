@@ -1,13 +1,12 @@
 Name:           tuxedo-infinitybook-gen10-cc-plugin
-Version:        0.1.0
-Release:        %autorelease
+Version:        0.0.0
+Release:        0%{?dist}
 Summary:        Plugin for CoolerControl for Tuxedo InfinityBook Gen10 laptops
 
-SourceLicense:  GPLv3
 License:        GPLv3
 
 URL:            https://github.com/sagebind/tuxedo-infinitybook-gen10-cc-plugin
-Source:         %{url}/archive/refs/tags/%{version}.tar.gz
+Source0:        %{name}-%{version}.tar.gz
 
 BuildRequires:  cargo
 
