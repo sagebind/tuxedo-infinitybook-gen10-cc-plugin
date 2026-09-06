@@ -1,6 +1,12 @@
+VERSION := $(shell awk -F'"' '/^version = / {print $$2; exit;}' < Cargo.toml)
+SOURCE_NAME := tuxedo-infinitybook-gen10-cc-plugin-$(VERSION)
+SOURCE_ARCHIVE := $(SOURCE_NAME).tar.gz
+TAR_ARGS := --exclude=.git --exclude=target
+
 srpm:
-	-rm ~/rpmbuild/SOURCES/tuxedo-infinitybook-gen10-cc-plugin-0.0.0.tar.gz
-	tar czf ~/rpmbuild/SOURCES/tuxedo-infinitybook-gen10-cc-plugin-0.0.0.tar.gz --exclude-ignore=.gitignore --transform='s,^,tuxedo-infinitybook-gen10-cc-plugin-0.0.0/,' .
-	rpmbuild -bs packaging/fedora/rpm.spec
 	mkdir -p $(outdir)
-	mv ~/rpmbuild/SRPMS/tuxedo-infinitybook-gen10-cc-plugin-*.src.rpm $(outdir)
+	tar czf $(outdir)/$(SOURCE_ARCHIVE) $(TAR_ARGS) --transform='s,^.,$(SOURCE_NAME),' .
+	rpmbuild -bs \
+		--define "_sourcedir $(outdir)" \
+		--define "_srcrpmdir $(outdir)" \
+		packaging/fedora/rpm.spec

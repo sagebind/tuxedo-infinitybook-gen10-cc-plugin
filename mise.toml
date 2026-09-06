@@ -8,5 +8,5 @@ run = "cargo build --locked --release"
 run = "make -f .copr/Makefile srpm outdir=target/rpm"
 
 [tasks.rpm]
-run = "rpmbuild --rebuild target/rpm/*.src.rpm"
+run = "rpmbuild --rebuild --define '_rpmdir target/rpm' target/rpm/*.src.rpm"
 depends = ["srpm"]
