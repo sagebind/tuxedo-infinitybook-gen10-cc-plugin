@@ -1,5 +1,5 @@
 .DEFAULT_GOAL := build
-plugins_dir := '/etc/coolercontrol/plugins'
+plugins_dir := '/var/lib/coolercontrol/plugins'
 executable := 'tuxedo-infinitybook-gen10'
 service_id := 'tuxedo-infinitybook-gen10'
 
@@ -9,16 +9,16 @@ clean:
 	@-$(RM) -rf target
 	@-$(RM) -rf vendor
 
-build:
+target/release/$(executable):
 	@cargo build --locked --release
 
-install: build
-	@sudo mkdir -p $(plugins_dir)/$(service_id)
-	@sudo install -m755 ./target/release/$(executable) $(plugins_dir)/$(service_id)
-	@sudo install -m644 ./manifest.toml $(plugins_dir)/$(service_id)
+install: target/release/$(executable)
+	@mkdir -p $(DESTDIR)$(plugins_dir)/$(service_id)
+	@install -m755 target/release/$(executable) $(DESTDIR)$(plugins_dir)/$(service_id)
+	@install -m644 manifest.toml $(DESTDIR)$(plugins_dir)/$(service_id)
 
 run: build
-	@sudo ./target/release/$(executable)
+	@sudo target/release/$(executable)
 
 uninstall:
 	@-sudo $(RM) -rf $(plugins_dir)/$(service_id)

@@ -18,15 +18,16 @@ Plugin for CoolerControl for Tuxedo InfinityBook Gen10 laptops.
 %setup
 
 %build
-cargo build
+make build
 
 %install
-# install -Dpm 0755 target/rpm/tuxedo-infinitybook-gen10 -t %{buildroot}%{_bindir}
+make DESTDIR=%{buildroot} install
 
 %files
 %license LICENSE
 %doc README.md
-# %{_bindir}/tuxedo-infinitybook-gen10
+/var/lib/coolercontrol/plugins/tuxedo-infinitybook-gen10/manifest.toml
+/var/lib/coolercontrol/plugins/tuxedo-infinitybook-gen10/tuxedo-infinitybook-gen10
 
 %changelog
 %autochangelog
