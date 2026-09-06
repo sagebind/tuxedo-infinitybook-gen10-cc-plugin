@@ -3,3 +3,10 @@ protobuf = "latest"
 
 [tasks.build]
 run = "cargo build --locked --release"
+
+[tasks.srpm]
+run = "make -f .copr/Makefile srpm outdir=target/rpm"
+
+[tasks.rpm]
+run = "rpmbuild --rebuild target/rpm/*.src.rpm"
+depends = ["srpm"]

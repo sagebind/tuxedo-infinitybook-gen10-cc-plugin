@@ -9,23 +9,24 @@ URL:            https://github.com/sagebind/tuxedo-infinitybook-gen10-cc-plugin
 Source0:        %{name}-%{version}.tar.gz
 
 BuildRequires:  cargo
+BuildRequires:  protobuf
 
 %description
 Plugin for CoolerControl for Tuxedo InfinityBook Gen10 laptops.
 
+%prep
+%setup
+
 %build
-ls -la $RPM_SOURCE_DIR
-ls -la %{buildroot}
-pwd
-cargo build --manifest-path $RPM_SOURCE_DIR/Cargo.toml
+cargo build
 
 %install
-install -Dpm 0755 target/rpm/tuxedo-infinitybook-gen10 -t %{buildroot}%{_bindir}
+# install -Dpm 0755 target/rpm/tuxedo-infinitybook-gen10 -t %{buildroot}%{_bindir}
 
 %files
 %license LICENSE
 %doc README.md
-%{_bindir}/tuxedo-infinitybook-gen10
+# %{_bindir}/tuxedo-infinitybook-gen10
 
 %changelog
 %autochangelog
