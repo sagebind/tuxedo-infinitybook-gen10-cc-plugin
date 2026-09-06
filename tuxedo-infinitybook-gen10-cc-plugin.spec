@@ -15,6 +15,7 @@ Plugin for CoolerControl for Tuxedo InfinityBook Gen10 laptops.
 
 %build
 ls -la $RPM_SOURCE_DIR
+ls -la %{buildroot}
 pwd
 cargo build --manifest-path $RPM_SOURCE_DIR/Cargo.toml
 
