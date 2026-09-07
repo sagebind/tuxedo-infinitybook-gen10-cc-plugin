@@ -12,7 +12,18 @@ To get the best support you are probably better off just using TCC. But for myse
 
 I've only tested this on a TUXEDO InfinityBook Max 15 Gen10 AMD, because that is the device that I have. But I suspect it will work for other Gen10 InfinityBooks as well. The plugin could probably be extended to support more TUXEDO laptops, but I don't have a need for that.
 
-## Usage
+## Installation
+
+### Fedora
+
+Prebuilt binaries are published to the [sagebind/coolercontrol-plugins](https://copr.fedorainfracloud.org/coprs/sagebind/coolercontrol-plugins/) COPR repository for Fedora. You can install this plugin from there:
+
+```sh
+sudo dnf copr enable sagebind/coolercontrol-plugins
+sudo dnf install tuxedo-infinitybook-gen10-cc-plugin
+```
+
+### Manual
 
 Installing the plugin can be done by cloning this repository and running
 
