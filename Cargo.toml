@@ -1,6 +1,6 @@
 [package]
 name = "tuxedo-infinitybook-gen10-cc-plugin"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["Stephen M. Coakley <me@stephencoakley.com>"]
 description = "Plugin for CoolerControl for Tuxedo InfinityBook Gen10 laptops"
 license = "GPL-3.0-or-later"
